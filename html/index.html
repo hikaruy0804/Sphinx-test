@@ -1,0 +1,214 @@
+
+
+<!doctype html>
+
+<html lang="ja" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sphinxの練習 &#8212; Sphinxの練習 2024.1.11 ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=16a8472a" />
+    
+    <script src="_static/documentation_options.js?v=21bdc24a"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=4dbe4bdc"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="Test1 ドキュメント" href="test1.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="test1.html" title="Test1 ドキュメント"
+             accesskey="N">次へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Sphinxの練習 2024.1.11 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Sphinxの練習</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="sphinx">
+<h1>Sphinxの練習<a class="headerlink" href="#sphinx" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p class="linemarker linemarker-11">SphinxはPythonのドキュメンテーション生成ツールです。特に、Pythonプロジェクトの公式ドキュメントを作成する際に広く使用されています。しかし、その機能はPythonに限定されず、他のプログラミング言語のドキュメント作成にも応用可能です。</p>
+<section id="id1">
+<h2>Sphinxの特徴<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p class="linemarker linemarker-15">自動APIドキュメント生成</p></li>
+<li><p class="linemarker linemarker-16">多様な出力形式</p></li>
+<li><p class="linemarker linemarker-17">拡張性とカスタマイズ性</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>今回の目的<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<p class="linemarker linemarker-22">SphinxをインストールしてHTMLを作成するまでの一連の流れを行います。</p>
+</section>
+<section id="id3">
+<h2>使い方<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p class="linemarker linemarker-28">インストール</p>
+<p class="linemarker linemarker-30">Sphinxライブラリをインストールします。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install sphinx
+</pre></div>
+</div>
+</li>
+<li><p class="linemarker linemarker-36">プロジェクトのセットアップ</p>
+<p class="linemarker linemarker-38">Sphinxプロジェクトをセットアップします。</p>
+<ol class="arabic">
+<li><p class="linemarker linemarker-40">プロジェクトフォルダを作成します。<code class="docutils literal notranslate"><span class="pre">例：sphinx-test</span></code></p></li>
+<li><p class="linemarker linemarker-41">作成したプロジェクトフォルダに移動してコマンドラインで次のコマンドを実行します。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sphinx-quickstart
+</pre></div>
+</div>
+</li>
+<li><p class="linemarker linemarker-47">コマンドラインでプロジェクトの作成に必要な質問に答えていきます。後で変更できます。</p>
+<ul class="simple">
+<li><p class="linemarker linemarker-49">プロジェクト名：<code class="docutils literal notranslate"><span class="pre">例：成りあがり</span></code></p></li>
+<li><p class="linemarker linemarker-50">著者名：<code class="docutils literal notranslate"><span class="pre">YAZAWA</span></code></p></li>
+<li><p class="linemarker linemarker-51">プロジェクトのリリース：<code class="docutils literal notranslate"><span class="pre">例：1978.7.25</span></code></p></li>
+</ul>
+</li>
+</ol>
+<p class="linemarker linemarker-53">#. プロジェクトファイルが生成されます。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sphinx-test/    &lt;- ルート（プロジェクト）ディレクトリ
+├── _build       &lt;- ビルドされたドキュメントが格納されるディレクトリ
+│   ├── doctrees
+│   └── html
+├── _static      &lt;- 静的ファイル（CSS、画像など）を格納するディレクトリ
+├── _templates   &lt;- カスタムテンプレートを格納するディレクトリ
+├── conf.py      &lt;- Sphinx設定ファイル
+├── index.rst    &lt;- メインのドキュメントファイル（トップページ）
+├── make.bat     &lt;- Windows用のビルドスクリプト
+└── Makefile     &lt;- Unix/Linux用のビルドスクリプト::
+</pre></div>
+</div>
+</li>
+<li><p class="linemarker linemarker-67">ドキュメントの作成</p>
+<p class="linemarker linemarker-69">ドキュメントは <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> というファイル形式で記述します。作成された <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> がメインページとなるので、このファイルに内容を記述していきます。複数ページを作成する場合は <code class="docutils literal notranslate"><span class="pre">○○.rst</span></code> を作成して、HTML上でリンクさせることもできます。</p>
+<p class="linemarker linemarker-71"><code class="docutils literal notranslate"><span class="pre">reStructuredTextとは</span></code></p>
+<p class="linemarker linemarker-73">Pythonプログラミング言語の公式ドキュメントの作成など広く使用される軽量マークアップ言語です。プレーンテキスト形式でドキュメントを書くことを目的としています。reStructuredTextは、Pythonの公式ドキュメンテーションを含む多くのプロジェクトで採用されています。</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p class="linemarker linemarker-75">シンプルな構文
+reStructuredTextは、読みやすく理解しやすい構文を使用します。例えば、アスタリスク（*）やアンダースコア（_）を使用して強調や斜体を表現します。</p></li>
+<li><p class="linemarker linemarker-78">ドキュメント構造
+タイトル、節、小節などの文書構造は、明確な規則に基づいて記述されます。これにより、整理されたドキュメントを簡単に作成できます。</p></li>
+<li><p class="linemarker linemarker-81">拡張性
+reStructuredTextはカスタマイズ可能で、様々なドキュメントの要件に合わせて拡張できます。</p></li>
+<li><p class="linemarker linemarker-84">変換可能性
+reStructuredTextドキュメントは、HTML、LaTeX、PDF、プレーンテキストなど、さまざまな形式に変換することができます。</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="linemarker linemarker-87">ドキュメントの記述</p>
+<p class="linemarker linemarker-89"><code class="docutils literal notranslate"><span class="pre">index.rst</span></code> に文章を書いていきます。今回はHTMLの作成までを行うので、画面右の**ソースコードを表示**をクリックしてこのページをすべて上書きで張り付けてください。</p>
+</li>
+<li><p class="linemarker linemarker-92">ビルド</p>
+<p class="linemarker linemarker-94">ドキュメントをHTMLやPDFなどの形式にビルドします。以下のコマンドで行います</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make html
+</pre></div>
+</div>
+<p class="linemarker linemarker-100">これでHTMLが作成されます。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sphinx-test/    &lt;- ルート（プロジェクト）ディレクトリ
+  ├── _build/
+  │   ├── html/
+  │   │   ├── index.html  &lt;- これ
+  │   │   ├── ...
+</pre></div>
+</div>
+</li>
+<li><p class="linemarker linemarker-109">カスタマイズ</p>
+<p class="linemarker linemarker-111"><code class="docutils literal notranslate"><span class="pre">conf.py</span></code> ファイルを編集することで、プロジェクトの設定をカスタマイズできます。テーマの変更、拡張機能の追加などが可能です。
+ここでは、テーマの変更方法を確認します。Sphinxには標準で以下の 10 個のテーマが用意されています。以下のように変更できます。</p>
+<p class="linemarker linemarker-114">conf.py</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;bizstyle&#39;</span>
+<span class="c1"># 下記オプションでバックグラウンドの色を変更できます。</span>
+<span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;maincolor&#39;</span> <span class="p">:</span> <span class="s2">&quot;#696969&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-123">各テーマのイメージや設定方法の詳細は、<a class="reference external" href="https://sphinx-users.jp/cookbook/changetheme/index.html">Sphinx-Users.jp</a> で確認してください。</p>
+<p class="linemarker linemarker-125">設定ができたら再度以下のコマンドでHTMLを作成します。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make html
+</pre></div>
+</div>
+</li>
+</ol>
+<p class="linemarker linemarker-131">書き方はほとんどマークダウンなので必要に応じて調べてながら書けば大丈夫かと。。</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="#">目次</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="test1.html">Test1 ドキュメント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test2.html">Test2 ドキュメント</a></li>
+</ul>
+
+  <div>
+    <h4>次のトピックへ</h4>
+    <p class="topless"><a href="test1.html"
+                          title="次の章へ">Test1 ドキュメント</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="test1.html" title="Test1 ドキュメント"
+             >次へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Sphinxの練習 2024.1.11 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Sphinxの練習</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; 著作権 2024, hikaru.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>
